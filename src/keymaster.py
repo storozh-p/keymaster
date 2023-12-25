@@ -9,15 +9,16 @@ init()
 
 class KeyMaster:
     def __init__(self) -> None:
+        self.version = "0.0.2"
         self.user_os = None
-        self.root_dir = None
+        self.root_dir = None # Root dir for keymaster
 
     def init_root_dir(self):
         if sys.platform.startswith('win'):
             print(colored("Developing", "green"))
             sys.exit(1)
         elif sys.platform.startswith('darwin'):
-            print("Developing")
+            print(colored("Developing", "green"))
             sys.exit(1)
         elif sys.platform.startswith('linux'):
             self.user_os = "linux"
